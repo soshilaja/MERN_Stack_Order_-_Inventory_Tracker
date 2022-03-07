@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN Factory Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="MERNfactory.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MERN Factory Orders</h1>
+            <p>Hint: Add a new Customer on the New Customer Form, add a new Order on the Product Order form.<br> Once the New Customer and Product Order are added it will appear on the left side Order Gallery Table (Make sure the new order total is higher than the highest order in the Order Glallery).</p>
+            <p>To make an update to customer details click on the order number. Order Number, Order Date and Customer Id are readonly.</p>
+        </div>
+
+        <div class="scrollable" id="orderGallery">
+        </div>
+
+        <div class="scrollable2" id="productGallery">
+        </div>
+
+        <div class="orderSummary">
+            <form class="orderSummary" id="customerView" action="http://localhost:8888/Customer" method="post">
+                <h4>Customer Details Inspector</h4>
+                <fieldset>       
+                    <div class="cols">
+                        <div class="item">
+                            <label for="OrderNumber">Order Number:</label><br>
+                            <input id="ordNum" type="text" readonly>
+                        </div>
+                        <div class="item">
+                            <label for="OrderDate">Order Date:</label><br>
+                            <input id="ordDate" type="text" readonly>
+                        </div>
+                        <div class="item">
+                            <label for="CustomerId">Customer Id:</label> <br>
+                            <input id="cusId" type="text" name="CustomerId" readonly>
+                        </div>
+                        <div class="item">
+                            <label for="FirstName">First Name:</label> <br>
+                            <input id="custFName" type="text" name="FirstName">
+                        </div>
+                        <div class="item">
+                            <label for="CustomerName">Last Name:</label> <br>
+                            <input id="custLName" type="text" name="LastName">
+                        </div>
+                        <div class="item">
+                            <label for="CustomerCity">Customer City:</label> <br>
+                            <input id="custCity"type="text" name="City" >
+                        </div>
+                        <div class="item">
+                            <label for="CustomerCountry">Customer Country:</label> <br>
+                            <input id="cusCount"type="text" name="Country" >
+                        </div>
+                        <div class="item">
+                            <label for="CustomerPhone">Customer Phone:</label> <br>
+                            <input id="cusPhone" type="text" name="Phone" >
+                        </div>
+                        <div class="item">
+                            <label for="email">E-mail:</label> <br>
+                            <input id="email" type="text" name="email" >
+                        </div>
+                        <div class="item">
+                            <input id="ubtn" class="fbtn" type="submit">
+                        </div>
+                    </div>
+                </fieldset> 
+            </form>
+        </div>
+
+            <div class="addNewCustomer">
+                <form class="addNewCustomer" id="addNewCustomer" action="http://localhost:8888/Customer" method="post">
+                    <h4>New Customer</h4>
+                    <fieldset>
+                        <legend>Add New Customer</legend>
+                        <div id="addCust">
+                            <div>
+                                <input class="cust" type="text" name="CustomerId" placeholder="Customer Id">
+                            </div>
+                            <div>
+                                <input class="cust" type="text" name="FirstName" placeholder="First Name">
+                            </div>
+                            <div>
+                                <input class="cust" type="text" name="LastName" placeholder="Last Name">
+                            </div>
+                            <div>
+                                <input class="cust" type="text" name="City" placeholder="City">
+                            </div>
+                            <div>
+                                <input class="cust" type="text" name="Country" placeholder="Country">
+                            </div>
+                            <div>
+                                <input class="cust" type="text" name="Phone" placeholder="Phone">
+                            </div>
+                            <div>
+                                <input class="cust" type="text" name="email" placeholder="email">
+                            </div>
+                            <div>
+                                <button class="fbtn" type="submit">Add Customer</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        
+            <div class="productOrder">
+                <form class="productOrder" id="productOrder" action="http://localhost:8888/Orders" method="post">
+                        <h4>Product Order</h4>
+                        <fieldset>
+                            <legend>Add New Order</legend>
+                            <div id="addOrder">
+                                <div>
+                                    <input class="order" type="text" name="Id" placeholder="OrderId">
+                                </div>
+                                <div>
+                                    <input class="order" type="text" name="OrderDate" placeholder="Order Date">
+                                </div>
+                                <div>
+                                    <input class="order" type="text" name="OrderNumber" placeholder="Order Number">
+                                </div>
+                                <div>
+                                    <input class="order" type="text" name="CustomerId" placeholder="Customer Id">
+                                </div>
+                                <div>
+                                    <input class="order" type="text" name="TotalAmount" placeholder="Total Amount">
+                                </div>
+                                <div>
+                                    <button class="fbtn" type="submit">Add Order</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                </form>
+            </div>
+    </div>
+    
+</body>
+<script src="client.js"></script>
+</html>
